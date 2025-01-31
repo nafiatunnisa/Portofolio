@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Nafi'atunnisa' - Web Content Writer dan Storyteller dengan latar belakang Psikologi. Temukan proyek-proyek saya dan hubungi saya untuk kolaborasi.">
+    <title>Portofolio Nafi'atunnisa'</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        /* Header */
+        header {
+            position: relative;
+            background: linear-gradient(135deg, #6A3FA0, #F1E6FF);
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            overflow: hidden;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            transition: transform 0.5s ease;
+        }
+        header p {
+            font-size: 1.3em;
+            transition: opacity 0.5s ease;
+        }
+        header:hover h1 {
+            transform: translateY(-20px);
+        }
+        header:hover p {
+            opacity: 0.8;
+        }
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/1200x800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        /* Navigasi */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #6A3FA0;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #F1E6FF;
+            color: #6A3FA0;
+        }
+        /* About Me */
+        #about {
+            padding: 60px 20px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #6A3FA0;
+        }
+        #about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        #about img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+        /* Portfolio */
+        #portfolio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            padding: 60px 20px;
+        }
+        #portfolio h2 {
+            font-size: 2.5em;
+            color: #6A3FA0;
+            margin-bottom: 40px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .portfolio-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .portfolio-item img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .portfolio-item h3 {
+            font-size: 2em;
+            color: #6A3FA0;
+            font-weight: bold;
+        }
+        .portfolio-item p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.5;
+        }
+        .portfolio-item a {
+            text-decoration: none;
+            color: #6A3FA0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .portfolio-item a:hover {
+            color: #502A80;
+        }
+        /* Contact Section */
+        #contact {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+            border: 2px solid #6A3FA0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 60px auto;
+            max-width: 600px;
+        }
+        #contact h2 {
+            font-size: 2.5em;
+            color: #6A3FA0;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #contact p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        #contact a {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #contact a:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+        /* Copywriting Section */
+        #copywriting {
+            padding: 80px 20px;
+            background-color: #F1E6FF;
+            text-align: center;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        #copywriting h2 {
+            font-size: 2.5em;
+            color: #6A3FA0;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        #copywriting p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .button-copywriting {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #6A3FA0;
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        .button-copywriting:hover {
+            background-color: #502A80;
+            transform: translateY(-2px);
+        }
+        /* Footer Styling */
+        footer {
+            background-color: #6A3FA0;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .footer-content p {
+            font-size: 1.2em;
+            color: white;
+            margin: 0;
+        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+            #about p {
+                font-size: 1.1em;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            #contact {
+                margin: 40px 20px;
+                padding: 60px 20px;
+            }
+            #contact h2 {
+                font-size: 2em;
+            }
+            #contact p {
+                font-size: 1em;
+            }
+            #copywriting h2 {
+                font-size: 2em;
+            }
+            #copywriting p {
+                font-size: 1.1em;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .button {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+            #about h2 {
+                font-size: 2em;
+            }
+            #about p {
+                font-size: 1.1em;
+            }
+            #portfolio h2 {
+                font-size: 2.2em;
+            }
+            .portfolio-item h3 {
+                font-size: 1.5em;
+            }
+            .portfolio-item p {
+                font-size: 0.9em;
+            }
+            #copywriting {
+                padding: 60px 20px;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="animate__animated animate__fadeIn">Nafi'atunnisa' Personal Space</h1>
+            <p class="animate__animated animate__fadeIn">Welcome to my portofolio! Explore my projects and get in touch.</p>
+        </div>
+        <div class="header-overlay"></div>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2 class="animate__animated animate__fadeIn">About Me</h2>
+        <p>Saya seorang Web Content Writer dan Storyteller yang menyukai dunia kepenulisan dari artikel SEO, cerpen, puisi, hingga novel. Punya latar belakang Psikologi membantu saya memahami lebih dalam karakter dan emosi manusia. Melalui tulisan, saya ingin menginspirasi dan berbagi wawasan dengan dunia. Mari berkolaborasi untuk menciptakan karya yang bermakna!</p>
+        <img src="https://via.placeholder.com/400x300" alt="Teacup and Books on Floral Textile" />
+        <div class="button-container">
+            <a href="https://wa.me/6285701776975" class="button">Get In Touch With Me</a>
+        </div>
+    </section>
+    <!-- Portfolio section -->
+    <section id="portfolio">
+        <h2 class="animate__animated animate__fadeIn">My Portofolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Typewriter" />
+                <h3>Jurnalis di Masagipedia</h3>
+                <p>Menulis artikel Berita dan informasi seputar Khazanah Islam. <a href="https://www.masagipedia.com/khazanah/31412995827/6-keutamaan-bulan-muharram-diantara-bulan-bulan-yang-lain">Baca selengkapnya</a></p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Notebook and Macbook" />
+                <h3>Blog Tema Psikologi</h3>
+                <p>Buat blog Peduli Emosi, yang berfokus pada tips kesehatan mental. <a href="https://peduliemosi.blogspot.com/">Peduli Emosi</a></p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Pen and Notebook" />
+                <h3>Artikel SEO - Hariane Jogja</h3>
+                <p>Menulis artikel SEO untuk berbagai topik. Salah satu contoh artikel bisa dibaca di <a href="https://harianejogja.com/8-rekomendasi-city-light-di-kota-jogja-cocok/">Artikel Hariane</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Copywriting Section -->
+    <section id="copywriting">
+        <h2 class="animate__animated animate__fadeIn">Copywriting Services</h2>
+        <p>Saya menawarkan jasa penulisan konten berkualitas, baik itu untuk kebutuhan SEO, artikel blog, hingga penulisan materi pemasaran. Dengan pengalaman dan keterampilan yang saya miliki, saya siap membantu bisnis Anda berkembang melalui tulisan yang menarik dan efektif.</p>
+        <a href="https://wa.me/6285701776975" class="button-copywriting">Get My Services</a>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="animate__animated animate__fadeIn">Contact Me</h2>
+        <p>If you are interested to collaborate or need more information about my services, feel free to reach out to me!</p>
+        <a href="https://wa.me/6285701776975">Connect on WhatsApp</a>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Nafi'atunnisa' - All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
